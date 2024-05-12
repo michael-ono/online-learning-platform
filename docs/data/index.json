@@ -1,0 +1,26 @@
+{
+    "team": [
+        {
+            "name": "Onochie Michael",
+            "email": "mikehunt@gmail.com",
+            "eNumber": "E/19/01"
+        },
+        {
+            "name": "Ariwaozo Stepanie",
+            "email": "azasteph.gmail.com",
+            "eNumber": "E/19/02"
+        },
+        {
+            "name": "Ikirigbe Evidience",
+            "email": "Ikirigbeg.evidience,edu.ng",
+            "eNumber": "E/19/03"
+        }
+    ],
+    "supervisors": [
+        {
+            "name": "Mr Owolabi Sunji",
+            "email": "owolabi.sunji.lcu.edu.ng"
+        }
+    ],
+    "tags": ["DBMS"]
+}
