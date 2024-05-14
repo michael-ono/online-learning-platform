@@ -1,6 +1,6 @@
 <h1>LearnLodge</h1>
 
-<p>>LearnLodge is a online learning platform designed to empower students to unleash their potential and achieve their dreams.<p>
+<p>LearnLodge is a online learning platform designed to empower students to unleash their potential and achieve their dreams.<p>
 
 # Tech Stack
 
