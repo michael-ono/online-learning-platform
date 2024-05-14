@@ -10,10 +10,12 @@ import { HiOutlineMail } from 'react-icons/hi';
 import { BsTelephoneInbound } from 'react-icons/bs';
 import { TiArrowBack } from 'react-icons/ti';
 import { FiLogIn } from 'react-icons/fi';
+import { ImSpinner10 } from "react-icons/im";
 
-import Tutor from '../components/images/registerImages/tutor.png'
+import Tutor from '../components/images/registerImages/tutor.jpeg'
 
 export default function TutorRegister() {
+    const [loading, setLoading] = useState(false); 
 
     const navigate = useNavigate();
 
@@ -40,22 +42,38 @@ export default function TutorRegister() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        axios.post('http://localhost:9081/tutor/addtutor', formData)
-            .then((response) => {
-                window.alert("Registered successfully. Publish your Courses!")
-                navigateHome(homePath)
-            })
-            .catch((error) => {
-                console.error('Error submitting form:', error);
-            });
+        try {
+            setTimeout(() =>{ 
+                setLoading(false);  
+                toast.success("Signup Successful");
+            }, 1500 );
+
+            setTimeout(() =>{ 
+                navigate('/logintutor');
+            }, 2500 );
+        }
+
+        catch (error) {
+            console.error("Error creating user:", error);
+            setLoading(false);
+        }
+
+        // axios.post('http://localhost:9081/tutor/addtutor', formData)
+        //     .then((response) => {
+        //         window.alert("Registered successfully. Publish your Courses!");
+        //         navigateHome(homePath);
+        //     })
+        //     .catch((error) => {
+        //         console.error('Error submitting form:', error);
+        //     });
     };
 
     return (
         <div className="min-w-screen min-h-screen bg-gray-900 flex items-center justify-center px-5 py-5">
             <div className="bg-gray-100 text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden" style={{ maxWidth: "1000px" }}>
                 <div className="md:flex w-full">
-                    <div className="hidden md:block w-1/2 bg-indigo-500 py-12 px-2">
-                        <img src={Tutor} />
+                    <div className="hidden md:block w-1/2 bg-[#26637f] py-12 px-2">
+                        <img src={Tutor}  style={{ backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}/>
                     </div>
                     <div className="w-full md:w-1/2 py-10 px-5 md:px-10">
 
@@ -71,7 +89,7 @@ export default function TutorRegister() {
                                     <label
                                         className="text-xs font-semibold px-1">
                                         Tutor / Institute Name
-                                        <span className='text-red-500 '> *</span>
+                                        <span className='text-red-500'> *</span>
                                     </label>
                                     <div className="flex">
                                         <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
@@ -170,9 +188,9 @@ export default function TutorRegister() {
                                 <div className="w-full">
                                     <button
                                         className="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold"
-                                        type="submit">
-                                        <FiLogIn className='inline mr-2 mb-1' fontSize={25} />
-                                        Register
+                                        type="submit"
+                                    >
+                                        {loading ? <ImSpinner10 className="animate-spin flex justify-center align-middle mx-auto" /> : <><FiLogIn className='inline mr-2 mb-1' fontSize={25} /> Register</> }
                                     </button>
                                 </div>
                             </div>

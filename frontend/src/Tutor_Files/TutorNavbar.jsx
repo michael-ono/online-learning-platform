@@ -44,7 +44,7 @@ function TutorNavbar() {
                     </div>
                     <span
                         className="text-2xl sm:text-4xl font-mono inline-block mb-2">
-                        Learn<span className="text-red-600">E</span>dge
+                        Learn<span className="text-red-600">L</span>odge
                     </span>
                 </div>
 

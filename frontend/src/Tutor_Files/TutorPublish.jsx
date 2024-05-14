@@ -20,14 +20,14 @@ function TutorPublish() {
     }, [])
 
     const loadDetails = async () => {
-        try {
-            const url = `http://localhost:9081/tutor/email/${tutorEmail}`;
-            const tutor = await axios.get(url);
-            setTutorIDNumber(tutor.data.tutorId);
-        }
-        catch (error) {
-            console.error("Error fetching User Details:", error);
-        }
+        // try {
+        //     const url = `http://localhost:9081/tutor/email/${tutorEmail}`;
+        //     const tutor = await axios.get(url);
+        //     setTutorIDNumber(tutor.data.tutorId);
+        // }
+        // catch (error) {
+        //     console.error("Error fetching User Details:", error);
+        // }
     };
 
     //Handle course Creation form
@@ -118,7 +118,7 @@ function TutorPublish() {
                         {/* Course price */}
                         <div className="mb-4">
                             <label htmlFor="price" className="block text-gray-600 font-medium mb-2">
-                                Price ($)
+                                Price (₦)
                             </label>
                             <input
                                 type="number"

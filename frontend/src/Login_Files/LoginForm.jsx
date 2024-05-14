@@ -36,9 +36,6 @@ function LoginForm({ isLogged }) {
         setTimeout(() => {
             navigate('/user/allcourses');
         }, 2500);
-
-      
-
       }
     } catch (error) {
       console.error("Error during login:", error);

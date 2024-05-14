@@ -6,7 +6,7 @@ export default function About() {
     return (
         <>
             <HomepageNavbar />
-            <div className="flex flex-wrap p-5 pb-0 text-[#]" style={{ backgroundImage: `url(${aboutBg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
+            <div className="flex flex-wrap p-5 pb-0" style={{ backgroundImage: `url(${aboutBg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat'}}>
                 <div className='px-10 pt-6 pb-20 select-none text-sm'>
                     {/* content goes inside this div */}
                     <h1 className='text-[2.3rem] text-center pb-3'><b >About Us</b></h1>

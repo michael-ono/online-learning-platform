@@ -53,7 +53,7 @@ function UserNavbar() {
                                 <li key={index} onClick={(e) => navigateDashBoard(e, Menu.path)} className={`cursor-pointer hover:text-blue-600 ${location.pathname === Menu.path ? 'text-blue-600' : ''}`}>
                                     <span>{Menu.title}</span>
                                 </li>
-                        ))};
+                        ))}
                     </ul>
                 </div>
 
