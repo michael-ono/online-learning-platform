@@ -6,7 +6,7 @@ const connectDB = require("./config/db.js");
 const colors = require("colors");
 const testRoutes = require("./routes/testRoutes.js");
 const authRoutes = require("./routes/authRoutes.js");
-const userRoutes = require("./routes/userRoutes.js")
+const userRoutes = require("./routes/userRoutes.js");
 
 
 const app = express();

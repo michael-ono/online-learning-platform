@@ -1,13 +1,12 @@
-const bcrypt = require("bcryptjs");
 const JWT = require("jsonwebtoken");
 const userModel = require("../models/userModel");
 
 const registerController = async (req, res) => {
     try {
         res.status(200);
-        const { userName, email, password, address, phone } = req.body;
+        const { firstName, lastName, email, password } = req.body;
         // validation
-        if (!userName || !email || !password || !address || !phone) {
+        if (!firstName || !lastName || !email || !password) {
             res.status(500);
             res.send({
                 success: false,
@@ -25,17 +24,12 @@ const registerController = async (req, res) => {
             });
         }
 
-        // hashing password
-        var salt = bcrypt.genSaltSync(10);
-        const hashedPassword = await bcrypt.hash(password, salt);
-
         // create a new user
         const newUser = await userModel.create({
-            userName,
+            firstName,
+            lastName,
             email,
-            password: hashedPassword, 
-            address, 
-            phone 
+            password 
         });
 
         res.status(201).send({
@@ -67,32 +61,27 @@ const loginController = async (req, res) => {
             });
         }
 
-        // check user 
-        const user = await userModel.findOne({ email }, { password: 0 });
+        const user = await userModel.findOne({ email });
 
         if (!user) {
             res.status(404).send({
                 success: false,
                 message: "User not found"
             });
-        };
+        }
 
-        // compare user password
-        const isMatch = bcrypt.compare(password, user.password);
-
-        if(!isMatch) {
+        if (user.password !== password) {
             res.status(500).send({
                 success: false,
-                message: "Password does not exist"
+                message: "Incorrect password"
             });
-        };
+        }
+
 
         // token
         const token = JWT.sign({ id: user._id }, process.env.JWT_SECRET, {
             expiresIn: "7d",
         });
-
-        user.password = undefined;
 
         res.status(200).send({
             success: true,
