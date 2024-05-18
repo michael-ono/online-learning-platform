@@ -15,7 +15,7 @@ import LiteratureImage from "./images/courseImages/literature.jpg";
 import cyberSecurity from "./images/courseImages/cyberSecurity.png";
 import music from "./images/courseImages/music.jpg";
 
-import axios from "axios";
+// import axios from "axios";
 
 const Card = ({name, category, price, buttonText, courseID}) => {
   

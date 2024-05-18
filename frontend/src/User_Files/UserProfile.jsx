@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Layout from "../shared/Layout";
 
 import UserNavbar from "./UserNavbar";
 
@@ -29,8 +30,7 @@ function UserProfile() {
     };
 
     return (
-        <>
-            <UserNavbar />
+        <Layout>
             <div className='pb-20 p-5 select-none bg-gradient-to-t from-gray-500 to-stone-300'>
                 {/* content goes inside this div */}
                 <h1 className='text-2xl text-center font-bold'>My Profile</h1>
@@ -125,7 +125,7 @@ function UserProfile() {
                 </section>
 
             </div>
-        </>
+        </Layout>
     )
 }
 
