@@ -4,6 +4,14 @@ module.exports = async (req, res, next) => {
     try {
         // get token
         const token = req.headers["authorization"].split(" ")[1];
+
+        if (!token) {
+            return res.status(401).send({
+                success: false,
+                message: "Unauthorized user"
+            });
+        };
+                
         JWT.verify(token, process.env.JWT_SECRET, (err, decode) => {
             if (err) {
                 return res.status(401).send({

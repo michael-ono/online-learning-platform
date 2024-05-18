@@ -1,3 +1,4 @@
+const userModel = require("../models/userModel");
 
 const getUserController = async (req, res) => {
     try {
@@ -12,14 +13,16 @@ const getUserController = async (req, res) => {
 
 const deleteUserController = async (req, res) => {
     try {
-        const { userId } = req.params.id; // Replace with your parameter name (e.g., id)
-    
+        const { id } = req.params;
+
+        console.log("### USER ID ### - " + id);
+
         // Validate user ID (optional)
-        if (!userId) {
-          return res.status(400).json({ message: 'Missing user ID' });
+        if (!id) {
+          return res.status(400).json({ message: "Missing user ID" });
         }
-    
-        const deletedUser = await User.findByIdAndDelete(userId);
+
+        const deletedUser = await userModel.findByIdAndDelete(id);
     
         if (!deletedUser) {
           return res.status(404).json({ message: 'User not found' });
