@@ -5,7 +5,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import { useState } from "react";
 import { useEffect } from "react";
 
-import UserNavbar from "./UserNavbar";
+import Layout from "../shared/Layout";
 
 import FullWidthCard from "../components/FullWidthCard";
 
@@ -66,53 +66,50 @@ function UserDashboard() {
     return (
         <>
             <Toaster />
-            <UserNavbar />
-            <div className='pb-20 p-5 select-none'>
-
-                <h1 className='text-5xl font-semibold text-center'>Welcome {userDetails.firstName}👋</h1>
-                <h1 className='text-2xl text-center mt-4'>Your Courses 📚</h1>
-
-                <div>
-                    <div className='p-2'>
-                        <FullWidthCard
-                            courseName="Cyber Security"
-                            courseCategory="Cyber Security"
-                            courseDescription="technology"
-                            // price="$12"
-                            tutorName="Hunter"
-                        />
+            <Layout>
+                <div className='pb-20 p-5 select-none'>
+                    <h1 className='text-5xl font-semibold text-center'>Welcome {userDetails.firstName}👋</h1>
+                    <h1 className='text-2xl text-center mt-4'>Your Courses 📚</h1>
+                    <div>
+                        <div className='p-2'>
+                            <FullWidthCard
+                                courseName="Cyber Security"
+                                courseCategory="Cyber Security"
+                                courseDescription="technology"
+                                // price="$12"
+                                tutorName="Hunter"
+                            />
+                        </div>
+                        <div className='p-2'>
+                            <FullWidthCard
+                                courseName="Intro to AI"
+                                courseCategory="Artificial Intelligence"
+                                courseDescription="technology"
+                                // price="$12"
+                                tutorName="Hunter"
+                            />
+                        </div>
+                        <div className='p-2'>
+                            <FullWidthCard
+                                courseName="Code God⚡"
+                                courseCategory="Programming"
+                                courseDescription="supreme"
+                                // price="$12"
+                                tutorName="Hunter"
+                            />
+                        </div>
+                        <div className='p-2'>
+                            <FullWidthCard
+                                courseName="Generative Model Explained"
+                                courseCategory="Machine Learning"
+                                courseDescription="tech"
+                                // price="$12"
+                                tutorName="Hunter"
+                            />
+                        </div>
                     </div>
-                    <div className='p-2'>
-                        <FullWidthCard
-                            courseName="Intro to AI"
-                            courseCategory="Artificial Intelligence"
-                            courseDescription="technology"
-                            // price="$12"
-                            tutorName="Hunter"
-                        />
-                    </div>
-                    <div className='p-2'>
-                        <FullWidthCard
-                            courseName="Code God⚡"
-                            courseCategory="Programming"
-                            courseDescription="supreme"
-                            // price="$12"
-                            tutorName="Hunter"
-                        />
-                    </div>
-                    <div className='p-2'>
-                        <FullWidthCard
-                            courseName="Generative Model Explained"
-                            courseCategory="Machine Learning"
-                            courseDescription="tech"
-                            // price="$12"
-                            tutorName="Hunter"
-                        />
-                    </div>
-
                 </div>
-
-            </div>
+            </Layout>
         </>
     )
 }

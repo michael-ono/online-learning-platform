@@ -2,7 +2,6 @@
 
 import { FaHome, FaUser, FaCalendarAlt, FaCog } from "react-icons/fa";
 import { MdAssignment } from "react-icons/md";
-import { BiSupport } from "react-icons/bi";
 import { RiTeamFill } from "react-icons/ri";
 
 
@@ -13,9 +12,9 @@ export const SidebarContent = [
     text: 'Dashboard',
   },
   {
-    route: '/user/assignment',
+    route: '/user/allcourses',
     icon: <MdAssignment />,
-    text: 'Courses',
+    text: 'Enroll',
   },
   {
     route: '/user/profile',
@@ -28,17 +27,7 @@ export const SidebarContent = [
     text: 'Contact',
   },
   {
-    route: '/schedule',
-    icon: <FaCalendarAlt />,
-    text: 'Schedule',
-  },
-  {
-    route: '/support',
-    icon: <BiSupport />,
-    text: 'Support',
-  },
-  {
-    route: "/settings",
+    route: "/user/settings",
     icon: <FaCog />,
     text: 'Settings',
   },

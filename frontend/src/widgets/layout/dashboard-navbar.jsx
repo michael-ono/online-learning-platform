@@ -13,7 +13,7 @@ import {
   Cog6ToothIcon,
   BellIcon,
   ClockIcon,
-  CreditCardIcon,
+  StarIcon,
 } from "@heroicons/react/24/solid";
 import {
   useMaterialTailwindController,
@@ -49,7 +49,7 @@ export function DashboardNavbar() {
             <MenuList className="w-max border-0">
               <MenuItem className="flex items-center gap-3">
                 <Avatar
-                  src="img/team-2.jpeg"
+                  src="/img/team-4.jpeg"
                   alt="item-1"
                   size="sm"
                   variant="circular"
@@ -60,7 +60,7 @@ export function DashboardNavbar() {
                     color="blue-gray"
                     className="mb-1 font-normal"
                   >
-                    <strong>New message</strong> from Laura
+                    <strong>New message</strong> from Mentor
                   </Typography>
                   <Typography
                     variant="small"
@@ -73,7 +73,7 @@ export function DashboardNavbar() {
               </MenuItem>
               <MenuItem className="flex items-center gap-4">
                 <Avatar
-                  src="/img/team-3.jpeg"
+                  src="/img/team-2.jpeg"
                   alt="item-1"
                   size="sm"
                   variant="circular"
@@ -84,7 +84,7 @@ export function DashboardNavbar() {
                     color="blue-gray"
                     className="mb-1 font-normal"
                   >
-                    <strong>New Task</strong> by Tech Sis
+                    <strong>New Task</strong> by Prof Alex
                   </Typography>
                   <Typography
                     variant="small"
@@ -97,7 +97,7 @@ export function DashboardNavbar() {
               </MenuItem>
               <MenuItem className="flex items-center gap-4">
                 <div className="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-tr from-blue-gray-800 to-blue-gray-900">
-                  <CreditCardIcon className="h-4 w-4 text-white" />
+                  <StarIcon className="h-4 w-4 text-white" />
                 </div>
                 <div>
                   <Typography
@@ -105,7 +105,7 @@ export function DashboardNavbar() {
                     color="blue-gray"
                     className="mb-1 font-normal"
                   >
-                    Assignment completed
+                    Course completed
                   </Typography>
                   <Typography
                     variant="small"

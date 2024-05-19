@@ -59,7 +59,6 @@ const Sidebar = ({ ums }) => {
             )}
           </div>
         </div>
-        
         <div>
         {toggle ? (
           <AvatarUpload />
@@ -125,7 +124,7 @@ const Sidebar = ({ ums }) => {
               toggle && 'md:pl-[25px] md:pr-[10px]'
             }`}
           >
-            <div className="flex items-center mb-[24px] cursor-pointer ">
+            <div className="flex items-center mb-[20px] cursor-pointer ">
                {/* <img src="https://i.pravatar.cc/150?img=59" className="w-[45px] h-[45px] rounded-full" />       */}
               {toggle && (
                 <div className="hidden md:ml-[16px] md:block">

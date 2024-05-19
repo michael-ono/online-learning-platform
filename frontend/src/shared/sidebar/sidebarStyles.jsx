@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const SidebarContainer = styled.div.attrs({
-  className: 'bg-[#244b3f] text-white flex flex-col justify-center  md:block',
+  className: 'bg-[#0b3860] text-white flex flex-col justify-center  md:block',
 })`
   height: 100vh;
   /* width: 250px; */

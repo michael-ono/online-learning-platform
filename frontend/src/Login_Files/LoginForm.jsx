@@ -116,7 +116,7 @@ function LoginForm({ isLogged }) {
                     {/* Login as a Tutor button */}
                     <div className="relative">
                       <button
-                        className="bg-yellow-500 text-white rounded-md px-5 py-1 w-full hover:bg-yellow-600"
+                        className="bg-[#bba840] text-white rounded-md px-5 py-1 w-full hover:bg-yellow-600"
                         onClick={() => navigateDest(logTutorPath)}
                       >
                         Login as a Tutor

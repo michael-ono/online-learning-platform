@@ -12,7 +12,6 @@ function UserContact() {
       <div className="pb-20 p-5 select-none">
         <Contact />
       </div>
-      <Footer2 />
     </Layout>
   );
 }

@@ -9,6 +9,7 @@ import UserDashboard from "./User_Files/UserDashboard";
 import UserAllCourses from "./User_Files/UserAllCourses";
 import UserProfile from "./User_Files/UserProfile";
 import UserContact from "./User_Files/UserContact";
+import UserSettings from "./User_Files/UserSettings";
 
 import Tutor from "./Tutor_Files/Tutor";
 import TutorPublish from "./Tutor_Files/TutorPublish";
@@ -39,6 +40,7 @@ function App() {
       <Route path="/user/profile" element={<UserProfile />} />
       <Route path="/user/contact" element={<UserContact />} />
       <Route path="/user/allcourses" element={<UserAllCourses />} />
+      <Route path="/user/settings" element={<UserSettings />} />
       {/* </Route> */}
 
       {/* Tutor */}
