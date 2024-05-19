@@ -8,24 +8,24 @@ import { RiTeamFill } from "react-icons/ri";
 
 export const SidebarContent = [
   {
-    route: '/dashboard',
+    route: '/user/dashboard',
     icon: <FaHome />,
     text: 'Dashboard',
   },
   {
-    route: '/profile',
+    route: '/user/assignment',
+    icon: <MdAssignment />,
+    text: 'Courses',
+  },
+  {
+    route: '/user/profile',
     icon: <FaUser />,
     text: 'Profile',
   },
   {
-    route: '/assignment',
-    icon: <MdAssignment />,
-    text: 'Assignment',
-  },
-  {
-    route: '/team',
+    route: '/user/contact',
     icon: <RiTeamFill />,
-    text: 'Team',
+    text: 'Contact',
   },
   {
     route: '/schedule',

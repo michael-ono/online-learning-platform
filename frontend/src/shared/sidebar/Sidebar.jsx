@@ -40,7 +40,7 @@ const Sidebar = ({ ums }) => {
                   className="relative left-[10px] w-[32px] h-[30px] mr-3 cursor-pointer"
                   onClick={handleNavigateHome}
                 />
-                <h2 className="text-[38px]">Hola</h2>
+                <h2 className="text-[18px]">LearnLodge</h2>
               </div>
             </div>
           )}
