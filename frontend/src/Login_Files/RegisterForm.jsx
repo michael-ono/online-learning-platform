@@ -52,17 +52,18 @@ function RegisterForm() {
         setLoading(true);
         
         try {
-            setTimeout(() =>{ 
-                setLoading(false);  
-                toast.success("Signup Successful");
-            }, 1500 );
+            const response = await axios.post('http://localhost:8081/api/v1/auth/register', formData);
 
-            setTimeout(() =>{ 
-                navigate('/login');
-            }, 2500 );
+            if (response.status === 200 || response.status === 201) {
+                toast.success("User created successfully");
+                setLoading(false);
+                console.log(response.data);
+                setTimeout(() => navigate('/login'), 1500);
+            }
         }
 
         catch (error) {
+            toast.error("Account creation failed");
             console.error("Error creating user:", error);
             setLoading(false);
         }
@@ -121,7 +122,8 @@ function RegisterForm() {
                                                 value={formData.lastName}
                                                 onChange={handleChange}
                                                 placeholder="Bright"
-                                                required />
+                                                required 
+                                            />
                                         </div>
                                     </div>
                                 </div>
@@ -139,11 +141,12 @@ function RegisterForm() {
                                             <input
                                                 type="email"
                                                 className="w-full -ml-10 pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
-                                                name="userEmail"
-                                                value={formData.userEmail}
+                                                name="email"
+                                                value={formData.email}
                                                 onChange={handleChange}
                                                 placeholder="alexbright@example.com"
-                                                required />
+                                                required 
+                                            />
                                         </div>
                                     </div>
                                 </div>
@@ -165,7 +168,8 @@ function RegisterForm() {
                                                 value={formData.password}
                                                 onChange={handleChange}
                                                 placeholder="************"
-                                                required />
+                                                required 
+                                            />
                                         </div>
                                     </div>
                                 </div>

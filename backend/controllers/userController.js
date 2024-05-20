@@ -27,7 +27,6 @@ const getUserController = async (req, res) => {
 };
 const getUserEmailController = async (req, res) => {
     try {
-        // Assuming you have a User model with a find method
         const user = await userModel.find({}, 'email');
         const emails = user.map(user => user.email);
 
