@@ -7,6 +7,7 @@ import { MdLock, MdPassword } from 'react-icons/md';
 import { TiArrowBack } from 'react-icons/ti';
 import { FiLogIn } from 'react-icons/fi';
 import { ImSpinner10 } from "react-icons/im";
+import axios from "axios";
 
 import User from '../components/images/logo.png'
 
@@ -35,11 +36,8 @@ function RegisterForm() {
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
-        phoneNumber: '',
-        dateOfBirth: '',
-        userEmail: '',
+        email: '',
         password: '',
-        dateRegistered: getCurrentDateFormatted()
     });
 
     const handleChange = (e) => {
@@ -103,7 +101,8 @@ function RegisterForm() {
                                                 name="firstName"
                                                 value={formData.firstName}
                                                 onChange={handleChange}
-                                                required />
+                                                required 
+                                            />
                                         </div>
                                     </div>
                                     <div className="w-1/2 px-3 mb-3">

@@ -9,10 +9,10 @@ function HomeContact() {
   return (
     <>
       <HomepageNavbar />
-      <div className="pb-10 p-8 select-none">
+      <div className="select-none max-h-full">
         <Contact />
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

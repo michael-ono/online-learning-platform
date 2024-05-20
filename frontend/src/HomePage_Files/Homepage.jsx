@@ -78,7 +78,7 @@ function Homepage() {
                             Certificates, and degrees from world-class universities.
                         </p>
                         <button
-                            className=" focus:outline-none bg-green-800 hover:bg-green-800 focus:ring-2 focus:ring-green-300 font-medium rounded-full text-md px-14 py-3 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                            className=" focus:outline-none bg-green-800 hover:bg-green-900 focus:ring-2 focus:ring-green-300 font-medium rounded-full text-md px-14 py-3 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
                             onClick={() => navigateSignup(registerPath)} 
                         >
                             Sign Up
