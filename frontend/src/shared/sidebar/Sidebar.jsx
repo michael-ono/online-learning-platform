@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { SidebarContent, userManagerContents } from './SidebarContents';
 import { SideNavLinkText, SidebarContainer, SidebarLinkWrapper } from './sidebarStyles';
-import logoImage from '../../assets/hola-icon.png';
+import logoImage from '../../components/images/logo.png';
 import AvatarUpload from "../../components/AvatarUpload";
 
 const Sidebar = ({ ums }) => {
@@ -30,7 +30,7 @@ const Sidebar = ({ ums }) => {
   return (
     <SidebarContainer>
       <div className="flex flex-col min-h-[80%]">
-        <div className="flex justify-center gap-x-[18px] mb-2">
+        <div className="flex justify-center gap-x-[18px] mb-2 pr-1">
           {toggle && (
             <div className="text-center font-[900] text-2xl hidden md:block">
               <div className="flex items-center">

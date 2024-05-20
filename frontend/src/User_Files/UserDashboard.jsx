@@ -82,9 +82,9 @@ function UserDashboard() {
                         </div>
                         <div className='p-2'>
                             <FullWidthCard
-                                courseName="Intro to AI"
-                                courseCategory="Artificial Intelligence"
-                                courseDescription="technology"
+                                courseName="The Art of Music"
+                                courseCategory="Music"
+                                courseDescription="music"
                                 // price="$12"
                                 tutorName="Hunter"
                             />
@@ -100,9 +100,9 @@ function UserDashboard() {
                         </div>
                         <div className='p-2'>
                             <FullWidthCard
-                                courseName="Generative Model Explained"
-                                courseCategory="Machine Learning"
-                                courseDescription="tech"
+                                courseName="Literature"
+                                courseCategory="Literature"
+                                courseDescription="reading"
                                 // price="$12"
                                 tutorName="Hunter"
                             />

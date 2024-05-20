@@ -1,6 +1,6 @@
 export const dummyData = [
   {
-    courseName: "React Course",
+    courseName: "Web Simplified",
     category: "Web Development",
     price: "₦299",
     buttonText: "Enroll Now",
@@ -28,7 +28,7 @@ export const dummyData = [
     courseID: 4
   },
   {
-    courseName: "Science Unraveled",
+    courseName: "Content Creation",
     category: "Science",
     price: "₦149",
     buttonText: "Enroll Now",
@@ -66,9 +66,16 @@ export const dummyData = [
 
 export const dummyDataUser = [
   {
-    courseName: "React Course",
+    courseName: "Web Simplified",
     category: "Web Development",
     price: "₦299",
+    buttonText: "Enroll Now",
+    courseID: 1
+  },
+  {
+    courseName: "Content Creation",
+    category: "Social",
+    price: "₦320",
     buttonText: "Enroll Now",
     courseID: 1
   },
@@ -94,23 +101,30 @@ export const dummyDataUser = [
     courseID: 4
   },
   {
-    courseName: "Science Unraveled",
-    category: "Science",
-    price: "₦149",
-    buttonText: "Enroll Now",
-    courseID: 5
-  },
-  {
     courseName: "Code God⚡",
     category: "Programming",
     price: "₦666",
     buttonText: "Enroll Now",
-    courseID: 6
+    courseID: 5
   },
   {
     courseName: "Cyber Security",
     category: "Cyber Security",
     price: "₦410",
+    buttonText: "Enroll Now",
+    courseID: 6
+  },
+  {
+    courseName: "Literature",
+    category: "Literature",
+    price: "₦410",
+    buttonText: "Enroll Now",
+    courseID: 6
+  },
+  {
+    courseName: "Science Unraveled",
+    category: "Science",
+    price: "₦149",
     buttonText: "Enroll Now",
     courseID: 7
   },

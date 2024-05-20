@@ -71,7 +71,7 @@ const FullWidthCard = ({ courseName, courseCategory, courseDescription, price, t
                 style={{ backgroundImage: `url(${imageSource})` }} >
             </div>
 
-            <div className="w-full bg-gradient-to-r from-gray-100 to-gray-300 rounded-b-2xl sm:rounded-b-none sm:rounded-r-2xl p-4 flex flex-col justify-between leading-normal">
+            <div className="w-full bg-gradient-to-r from-gray-200 to-gray-500 rounded-b-2xl sm:rounded-b-none sm:rounded-r-2xl p-4 flex flex-col justify-between leading-normal">
                 <div className="mb-2">
                     <div className="text-gray-900 font-bold text-3xl">
                         {courseName}
@@ -79,9 +79,6 @@ const FullWidthCard = ({ courseName, courseCategory, courseDescription, price, t
                     <p className="text-gray-700 text-[1.1rem] font-semibold mt-4 leading-relaxed">
                         {courseDescription}
                     </p>
-
-
-
                 </div>
 
                 {/* <div className="flex items-center"> */}

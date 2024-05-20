@@ -9,8 +9,8 @@ import SettingsModal from "../components/settingsModal";
 
 const UserSettings = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  const [userName, setuserName] = useState();
-  const [track, setTrack] = useState();
+  const [firstName, setuserName] = useState();
+  const [lastName, setTrack] = useState();
   const [email, setEmail] = useState();
   const [userValue, setUserValue] = useState("");
   const [trackValue, setTrackValue] = useState("");
@@ -31,10 +31,10 @@ const UserSettings = () => {
     if (isEditing) {
       const { name, value } = event.target;
       switch (name) {
-        case 'userName':
+        case 'firstName':
           setUserValue(value);
           break;
-        case 'track':
+        case 'lastName':
           setTrackValue(value);
           break;
         case 'email':
@@ -63,8 +63,8 @@ const UserSettings = () => {
               <div className="pt-4 mb-5">
                 <h3 className="text-xl font-bold mb-4">User Information</h3>
                 <div className="flex flex-wrap">
-                  <SettingsInput labelName="Username" type="text" name="userName" placeholder="Tech" value={userValue} onChange={handleChange} disabled={!isEditing} />
-                  <SettingsInput labelName="Track" type="text" name="track" placeholder="Supreme" value={trackValue} onChange={handleChange} disabled={!isEditing} />
+                  <SettingsInput labelName="First Name" type="text" name="firstName" placeholder="Tech" value={userValue} onChange={handleChange} disabled={!isEditing} />
+                  <SettingsInput labelName="Last Name" type="text" name="lastName" placeholder="Supreme" value={trackValue} onChange={handleChange} disabled={!isEditing} />
                   <SettingsInput labelName="Email" type="email" name="email" placeholder="techsupreme@gmail" value={emailValue} onChange={handleChange} disabled={!isEditing}/>
                   <SettingsInput labelName="Password" type="password" name="password" placeholder="********" value={passwordValue} onChange={handleChange} disabled={!isEditing}/>
                   <button className="bg-[#000] hover:bg-[#323030] flex text-white text-[0.7rem] font-bold py-1.5 px-2.5 rounded-md" onClick={() => setIsEditing(!isEditing)}>
@@ -133,6 +133,7 @@ const UserSettings = () => {
                   </div>
                 </div>
                   <div className="mx-auto my-auto">
+                    <h2 className="text-xl font-bold mb-4 tex">Extra Security</h2>
                     <img src={PadlockIcon} className="w-[140px] h-[100px] cursor-pointer" alt="" />
                     <button className="flex items-center mx-auto mt-2 justify-center py-[0.3rem] px-[0.8rem] md:py-[0.4rem] md:px-7 text-[0.8rem] font-semibold text-white bg-black rounded-md shadow-md hover:bg-[#6abeda] hover:text-black"  onClick={() => setModalOpen(true)}>Enable 2FA</button>
                   </div>

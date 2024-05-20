@@ -97,7 +97,7 @@ function LoginForm({ isLogged }) {
                     {/* Submit Button */}
                     <div className="relative">
                       <button
-                        className="mt-3 bg-blue-500 text-white rounded-md px-5 py-1 w-full hover:bg-blue-700"
+                        className="mt-3 bg-blue-500 text-white rounded-md px-5 py-1 w-full hover:bg-blue-800"
                         type="submit"
                         disabled={loading}
                       >
@@ -116,7 +116,7 @@ function LoginForm({ isLogged }) {
                     {/* Login as a Tutor button */}
                     <div className="relative">
                       <button
-                        className="bg-[#bba840] text-white rounded-md px-5 py-1 w-full hover:bg-yellow-600"
+                        className="bg-[#e1ca4b] text-white rounded-md px-5 py-1 w-full hover:bg-yellow-600"
                         onClick={() => navigateDest(logTutorPath)}
                       >
                         Login as a Tutor
@@ -126,7 +126,7 @@ function LoginForm({ isLogged }) {
                 </div>
               </form>
               <div className="text-center text-black p-4 text-sm rounded-lg bg-transparent font-bold w-full">
-                  Don't have an account? <Link className="text-blue-500" to="/register">Register here</Link>
+                  Don't have an account? <Link className="text-blue-500 hover:text-blue-800" to="/register">Register here</Link>
               </div>
             </div>
           </div>

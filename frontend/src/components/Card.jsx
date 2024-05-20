@@ -14,6 +14,8 @@ import ScienceImage from "./images/courseImages/science.jpg";
 import LiteratureImage from "./images/courseImages/literature.jpg";
 import cyberSecurity from "./images/courseImages/cyberSecurity.png";
 import music from "./images/courseImages/music.jpg";
+import socialMedia from "./images/courseImages/social.jpg";
+
 
 // import axios from "axios";
 
@@ -66,6 +68,10 @@ const Card = ({name, category, price, buttonText, courseID}) => {
 
     case "Music":
       imageSource = music;
+      break;
+
+    case "Social":
+      imageSource = socialMedia;
       break;
 
     default:
@@ -129,7 +135,7 @@ const Card = ({name, category, price, buttonText, courseID}) => {
 
   return (
     <div className="w-full max-w-sm bg-white border-gray-200 rounded-lg shadow text-black border-2 border-transparent hover:border-blue-500">
-      <img src={imageSource} className="rounded-t-lg h-64 w-full" />
+      <img src={imageSource} className="rounded-t-lg h-60 w-full" />
 
       <div className="px-5 pb-5 pt-2">
         <h5 className="text-xl font-semibold tracking-tight text-gray-900">

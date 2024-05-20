@@ -93,7 +93,7 @@ function Homepage() {
 
                 <div className="bg-gray-300 text-4xl px-5 py-4 pl-[5rem] font-semibold">
                     <div className="container mx-auto">
-                        Find Courses for you 📚
+                        Trending Courses 📚
                     </div>
                 </div>
 

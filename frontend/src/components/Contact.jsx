@@ -1,96 +1,107 @@
-import React from "react";
-import { useState } from "react";
+import Layout from "../shared/Layout";
+import { FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import toast, { Toaster } from 'react-hot-toast';
 
-import axios from 'axios';
-
-function Contact() {
-
-  const [mailSubject, setSubject] = useState('Inquiry from Website Contact Form');
-  const [name, setName] = useState('');
-  const [senderEmail, setSenderEmail] = useState('');
-  const [adminEmail, setAdminEmail] = useState('learnlodge@gmail.com');
-  const [formMmessage, setMessage] = useState('');
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();   
-  
-    const formData = {
-      subject: mailSubject,
-      email: adminEmail,
-      message: 
-      `You have received a new inquiry from the Contact Us section of your website. \nHere are the details: \n\nName: ${name} \nEmail: ${senderEmail} \nMessage: ${formMmessage} \n \nPlease take appropriate action to respond to this inquiry as soon as possible. \nThank You!`
-    };
-
-
-    try {
-      await axios.post('http://localhost:8080/contact/submit', formData);     
-      alert('Email sent successfully');
-
-    }
-
-    catch (error) {
-
-      alert('Error sending email');
-
-    }
-    
-  };
+const Contact = () => {
 
   return (
-    <div className="mx-auto max-w-screen-md">
-      <h2 className="mb-4 text-[2.4rem] tracking-tight font-extrabold text-center">
-        Contact Us
-      </h2>
-      <p className="mb-3 lg:mb-7 font-light text-center sm:text-xl">
-        {" "}
-        Got a question? Need assistance? We're here to help!{" "}
-      </p>
+    <>
+      <Toaster />
+      <div className="md:flex justify-between h-full overflow-hidden px-1 bg-brightGray text-indigo-100">
+        <div className="md:w-3/5 h-[60vh] md:mb-0 px-3 py-4">
+          <div className="">
+            <h2 className="text-[2rem] md:text-[2.2rem] lg:text-[2.5rem] text-black font-bold">
+              Help & Support
+            </h2>
+            <p className="mb-5 text-black text-[0.9rem] md:text-[1rem]">
+              Submit your question and our team we will respond to the email
+              provided as soon as possible
+            </p>
+          </div>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div>
-          <label className="block mb-1.5 text-sm font-medium">Name:</label>
-          <input
-            type="text"
-            className="shadow-sm border border-gray-300 text-black text-sm rounded-lg focus:border-primary-500 block w-full p-2.5"
-            placeholder="Enter Your Name"
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
+          <div className="mx-auto">
+            <div className="max-w-md mx-auto  bg-[#e7e2e2] rounded-md shadow-sm">
+              <div className="text-center pt-2">
+                <h1 className="my-3 text-3xl font-semibold text-gray-800">
+                  Contact Me
+                </h1>
+                <p className="text-gray-700">
+                  Fill in this form to send me a message.
+                </p>
+              </div>
+              <div className="m-7">
+                <form name="contact" onSubmit={(e) => e.preventDefault}>
+                  <div className="mb-6">
+                    <label htmlFor="name" className="block mb-2 font-semibold text-sm text-black">
+                      Full Name
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      className="w-full px-3 py-2 text-black placeholder-gray-400 border bg-white border-gray-900 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
+                    />
+                  </div>
+                  <div className="mb-6">
+                    <label htmlFor="email" className="block mb-2 text-sm font-semibold text-black">
+                      Email Address
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      className="w-full px-3 py-2 font-semibold text-black placeholder-gray-400 border bg-white border-gray-900 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
+                    />
+                  </div>
+                  <div className="mb-6">
+                    <label
+                      htmlFor="message"
+                      className="block mb-2 font-semibold text-sm text-black"
+                    >
+                      Your Message
+                    </label>
+                    <textarea
+                      type="text"
+                      rows="5"
+                      name="message"
+                      id="message"
+                      className="w-full px-3 py-2 text-black placeholder-gray-400 border border-gray-900 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
+                    ></textarea>
+                  </div>
+                  <div className="px-8">
+                    <button
+                      type="button"
+                      className="w-full py-1 text-white bg-primaryColor rounded-md focus:bg-orange focus:outline-none"
+                      onClick={() => toast.success('Message sent successfully', { duration: 2000 })}
+                    >
+                      Send Message
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div>
-          <label className="block mb-1.5 text-sm font-medium">Email:</label>
-          <input
-            type="email"
-            className="shadow-sm border border-gray-300 text-black text-sm rounded-lg focus:border-primary-500 block w-full p-2.5"
-            placeholder="Enter Your Email"
-            onChange={(e) => setSenderEmail(e.target.value)}
-            required
-          />
+        {/* Right */}
+        <div className="md:w-2/5 h-full gradient-image">
+          <div className="hidden md:flex text-[#ffffff] justify-center gap-x-8 pt-[40%]">
+            <a href="https://www.facebook.com">
+              <FaLinkedin name="FaFacebook" size={25} />
+            </a>
+            <a href="https://www.twitter.com">
+              <FaTwitter name="FaTwitter" size={25} />
+            </a>
+            <a href="https://www.instagram.com">
+              <FaInstagram name="FaInstagram" size={25} />
+            </a>
+          </div>
         </div>
 
-        <div className="sm:col-span-2">
-          <label className="block mb-1.5 text-sm font-medium">Message: </label>
-          <textarea
-            id="message"
-            rows="6"
-            name="message"
-            className="block p-2.5 w-full text-sm text-gray-900 rounded-lg shadow-sm border border-gray-300 focus:border-primary-500"
-            placeholder="Enter Your Message"
-            onChange={(e) => setMessage(e.target.value)}
-            required
-          />
-        </div>
-
-        <button
-          type="submit"
-          className="text-purple-700 hover:text-white border border-purple-700 hover:bg-purple-800 focus:ring-2 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-        >
-          Submit
-        </button>
-      </form>
-    </div>
+      </div>
+    </>
   );
-}
+};
 
 export default Contact;
+
