@@ -2,12 +2,55 @@ const userModel = require("../models/userModel");
 
 const getUserController = async (req, res) => {
     try {
+        // Assuming you have a User model with a find method
+        const user = await userModel.find();
+
+        if (!user) {
+          return res.status(404).send({
+            success: false,
+            message: "User not found"
+          });
+        }
+
         res.status(200).send({
-            success: true,
-            message: "Get user details successful"
-        })
+          success: true,
+          message: "Get user successful",
+          user: user
+        });
     } catch (error) {
         console.log(error);
+        res.status(500).send({
+          success: false,
+          message: "An error occurred while retrieving user details"
+        });
+    }
+};
+const getUserEmailController = async (req, res) => {
+    try {
+        // Assuming you have a User model with a find method
+        const user = await userModel.find({}, 'email');
+        const emails = user.map(user => user.email);
+
+        console.log(emails);
+
+        if (!user) {
+          return res.status(404).send({
+            success: false,
+            message: "User not found"
+          });
+        }
+
+        res.status(200).send({
+          success: true,
+          message: "Get user successful",
+          user: user
+        });
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({
+          success: false,
+          message: "An error occurred while retrieving user details"
+        });
     }
 };
 
@@ -36,4 +79,4 @@ const deleteUserController = async (req, res) => {
 };
 
 
-module.exports = { getUserController, deleteUserController };
+module.exports = { getUserController, deleteUserController, getUserEmailController };
